@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+
+    </script>
+    <script type="text/javascript">
+    function fun() {
+        var pass = $('#password').val();
+        console.log(pass);
+    }
+    </script>
+
+</head>
+<body>
+
+<div id="div">
+    Lorem ipsum dolor.
+    <p>Abzac</p>
+</div>
+
+<input type="text" id="text"/>
+<input type="password" id="password"/>
+<input type="button" onclick="fun()" value="Push"/>
+<script type="text/javascript">
+    console.log($("#div").html());
+    console.log($("#div").text());
+
+    setTimeout("$('#div').html($('#div').html()+'<p>New Abzac</p>')", 3000);
+
+    var block = $('#div').clone();
+    block.css("font-size", "30px");
+    block.css("backgroundColor", "blue");
+    console.log(block.html());
+    $('body').append(block);
+    block.append('<p>Second New Abzac</p>');
+
+//    setTimeout("$('#div:first').remove()", 4000);
+    setTimeout("$('#div:first').empty()", 4000);
+    $("<p>appendTo</p>").prependTo('div');
+</script>
+</body>
+</html>
