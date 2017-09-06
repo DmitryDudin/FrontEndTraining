@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Barley-Break</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
 
 
         /*--------------------------------------------------------------------------------------------------------------*/
-        /* http://meyerweb.com/eric/tools/css/reset/
+        /*
+        reset default css style
+        http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -64,6 +67,10 @@
         }*/
 
         /*--------------------------------------------------------------------------------------------------------------*/
+        input {
+            font-size: 15px;
+            margin: 20px;
+        }
 
         .main {
             width: 400px;
@@ -96,13 +103,13 @@
         }
 
         .empty {
-            border: none;
+            border: 2px solid aquamarine;
             background-color: aquamarine;
         }
     </style>
 </head>
 <body>
-<input type="button" value="test"/>
+<input type="button" value="Restart"/>
 <div class="page">
     <div class="main">
         <div id="1" class="square">
@@ -150,11 +157,64 @@
         <div id="15" class="square">
             15
         </div>
-        <div id="16" class="">
+        <div id="16" class="square empty">
 
         </div>
     </div>
 </div>
 
+<script>
+
+    var elemHaveStep = function (targetCell, emptyCell) {
+        if(targetCell.hasClass('empty')) {
+            return false;
+        }
+        var b= true;
+//        var b= false;
+        return b;
+    };
+
+
+    var checkForWin = function () {
+        var b= true;
+        return b;
+
+    };
+
+    $('.square').click(function (event) {
+        var targetCell= $(this);
+        var emptyCell= $('.empty');
+//        var message = targetCell.text();
+//        console.log(message);
+
+        if(elemHaveStep(targetCell, emptyCell)){
+            console.log('elem has next step')
+            var value = targetCell.text();
+            targetCell.addClass('empty');
+            targetCell.text('');
+            emptyCell.removeClass('empty');
+            emptyCell.text(value);
+            if(checkForWin()){
+                //todo show win message
+                console.log('you are win')
+            }
+        }else{
+            //todo set red border for 1sec
+            console.log('elem not have next step')
+        }
+
+    });
+
+    $('input').click(function () {
+        console.log("restart button")
+    });
+
+
+    function startingMix() {
+        console.log('startingMix');
+    }
+    //start
+    startingMix();
+</script>
 </body>
 </html>
