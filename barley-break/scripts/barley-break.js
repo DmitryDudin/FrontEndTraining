@@ -14,8 +14,7 @@ $('.square').click(function () {
     }
 
     if (checkForWin()) {
-        console.log('you are win');
-//         alert(" YOU ARE WINNER!!!");//TODO must first move cell and then show alert???
+        setTimeout(function () { alert(' YOU ARE WINNER!!!'); }, 10);
     }
 });
 
