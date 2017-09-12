@@ -1,4 +1,38 @@
-.col {
+.border {
     border: 1px solid blue;
+    border-radius: 5px;
+}
 
+.padding-15 {
+    padding: 15px;
+}
+
+.column {
+    background: #f7f7f7;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /*border-radius: 20px;*/
+}
+
+.width-10 {
+    width: 10px;
+}
+
+.width-20 {
+    width: 20px;
+}
+
+.margin-10 {
+    margin-left: -11px;
+    margin-right: -11px;
+}
+
+.margin-plus-10 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.h-max {
+    height: 100%;
 }

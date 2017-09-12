@@ -19,29 +19,57 @@
 <body>
 <div class="container">
     <div class="row">
+        <div class="col">
+            Первый (не упорядоченный, без класса order-)
+        </div>
+        <div class="col order-12">
+            Второй, но будет отображаться последним
+        </div>
+        <div class="col order-1">
+            Третий, но будет отображаться вторым
+        </div>
+    </div>
 
-        <div class="col-md-4 col">
-            1
+    <div class="row">
+        <div class="col border "> (1)</div>
+        <div class="col-md-auto border "> (2) - ширина на контрольных точках md, lg и xl будет определяться на основании
+            содержимого
         </div>
-        <div class="col-md-4 col">
-            2
+        <div class="col col-lg-2 border "> (3)</div>
+    </div>
+
+    <div class="row ">
+
+        <div class="col-md-4 ">
+            <div class="border margin-10 h-max  column">
+                1 column
+            </div>
         </div>
-        <div class="col-md-4 col">
-            3
-            <div class="row col">
+        <div class="col-md-4 ">
+            <div class="border margin-10 column h-max">
+                2 column
+            </div>
+        </div>
+        <div class="col-md-4 column border no-gutters ">
+            3 column
+            <div class="row border no-gutters">
                 <!--row1-->
-                <div class="col-md-4 col">
+                <div class="col-md border ">
                     r1
                 </div>
-                <div class="col-md-4 col">
+                <div class="col-md border ">
                     r2
                 </div>
                 <!--<div class="col-md-4 col">-->
-                    <!--r3-->
+                <!--r3-->
                 <!--</div>-->
             </div>
-            <div class="row col">row2</div>
-            <div class="row col">row3</div>
+            <div class="row border">row2</div>
+            <div class="row border">row3</div>
+            <div class="row border">row3</div>
+        </div>
+        <div class="col-xl border">
+            333
         </div>
     </div>
 </div>
