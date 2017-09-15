@@ -4,6 +4,7 @@
     <link rel="stylesheet" type="text/css" href="css/taskBoard.css"/>
     <meta charset="UTF-8">
     <title>Task Board</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
@@ -16,9 +17,9 @@
             integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
             crossorigin="anonymous"></script>
 </head>
-<body>
+<body style="padding-top: 20px;background-size: 100%; background-image: url(http://themepack.me/i/c/749x468/media/g/1120/dark-blue-theme-oo1.jpg)">
 <div class="container">
-    <div class="row">
+    <!--<div class="row">
         <div class="col">
             Первый (не упорядоченный, без класса order-)
         </div>
@@ -28,28 +29,70 @@
         <div class="col order-1">
             Третий, но будет отображаться вторым
         </div>
-    </div>
+    </div>-->
 
-    <div class="row">
+    <!--<div class="row">
         <div class="col border "> (1)</div>
         <div class="col-md-auto border "> (2) - ширина на контрольных точках md, lg и xl будет определяться на основании
             содержимого
         </div>
         <div class="col col-lg-2 border "> (3)</div>
-    </div>
+    </div>-->
 
     <div class="row ">
 
-        <div class="col-md-4 ">
-            <div class="border margin-10 h-max  column">
-                1 column
+        <div class="col-md-4 border section">
+            <div class="margin-5 column border ">
+                <div class="column-title border">
+                    <b>Backlog</b>
+                </div>
+                <div class="card">
+                    <a href="#" style="color:black; text-decoration: none">
+                        Card Card Card Card Card Card Card Card Card Card Card Card Card Card Card Card
+                    </a>
+                </div>
+                <!--<div class="">-->
+                <a href="#" class="card-href border" style="color:black; text-decoration: none">
+                    <!--<div class="card">-->
+                    LoremLoremLoremLoremLoremL oremcardLorLoremLoremLoremL oremcardLoremLoremLoremLoremL
+                    oremcardLoremoremLoremL oremcard
+                    <!--</div>-->
+
+                </a>
+
+                <!--</div>-->
+
+                <div class=" border padding-1">
+                    <textarea class=" card-text w-max">
+
+                    </textarea>
+                </div>
+
+                <a href="#" style="color:black; text-decoration: none">
+                    <div class="column-footer border">
+                        Add a card...
+                    </div>
+                </a>
+
+                <div class="border padding-5">
+                    <input type="submit" class="btn btn-success btn-sm" value="Add">
+                    <a href="#" class="m-l-10" style="color:black; text-decoration: none">
+                        <i class="fa fa-times fa-lg" aria-hidden="true"></i>
+                    </a>
+                </div>
             </div>
         </div>
+
+
         <div class="col-md-4 border ">
-            <div class=" col border <!--margin-10 column h-max-->">
-                2 column
+            <div class="margin-5 column border ">
+
+                <div class=" col border <!--margin-10 column h-max-->">
+                    2 column
+                </div>
             </div>
         </div>
+
         <div class="col-md-4 column border no-gutters ">
             3 column
             <div class="row border no-gutters">
@@ -68,10 +111,9 @@
             <div class="row border">row3</div>
             <div class="row border">row3</div>
         </div>
-        <div class="col-xl border">
-            333
-        </div>
+
     </div>
+
 </div>
 </body>
 </html>
