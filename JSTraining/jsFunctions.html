@@ -83,30 +83,225 @@
     //    Нет, нельзя.Локальная переменная полностью перекрывает внешнюю.
 
     //    -----------------------------------------------------------------------------------------------------------------
-    var a = 1;
+    /*var a = 1;
 
-    function getFunc() {
-        var a = 2;
+     function getFunc() {
+     var a = 2;
 
-        var func = new Function('', 'alert(a)');
+     var func = new Function('', 'alert(a)');
 
-        return func;
-    }
+     return func;
+     }
 
-    getFunc()(); // 1, из window
+     getFunc()(); // 1, из window*/
     //    ----------------
-    var b = 1;
+    /*var b = 1;
 
-    function getFuncB() {
-        var b = 2;
+     function getFuncB() {
+     var b = 2;
 
-        var funcB = function() { alert(b); };
+     var funcB = function () {
+     alert(b);
+     };
 
-        return funcB;
+     return funcB;
+     }
+
+     getFuncB()(); // 2, из LexicalEnvironment функции getFunc*/
+    //    -----------------------------------------------------------------------------------------------------------------
+    //Счётчик обьект
+    function objCounter() {
+        var count = 0;
+        return {
+            set: function (value) {
+                count = value;
+            },
+            getNext: function () {
+                return ++count;
+            },
+            reset: function () {
+                count = 0;
+            }
+        }
+    }
+    var objCounter = objCounter();
+    console.log('ObjCounter');
+    console.log('next1= ' + objCounter.getNext());
+    console.log('   next2= ' + objCounter.getNext());
+    objCounter.reset();
+    console.log('   after reset');
+    console.log('       next3= ' + objCounter.getNext());
+    console.log('       next4= ' + objCounter.getNext());
+    objCounter.set(10);
+    console.log('   after set 10');
+    console.log('       next5= ' + objCounter.getNext());
+    console.log('       next6= ' + objCounter.getNext());
+    //    -----------------------------------------------------------------------------------------------------------------
+    //Обьект счётчика + функция
+    function funcCounter() {
+        var count = 0;
+
+        function counter() {
+            return ++count;
+        };
+        counter.set = function (value) {
+            count = value;
+        };
+        counter.reset = function () {
+            count = 0;
+        };
+        return counter;
     }
 
-    getFuncB()(); // 2, из LexicalEnvironment функции getFunc
+    var funcCounter = funcCounter();
+    console.log('FuncCounter');
+    console.log('   next1= ' + funcCounter());
+    console.log('   next2= ' + funcCounter());
+    funcCounter.reset();
+    console.log('   after reset');
+    console.log('       next3= ' + funcCounter());
+    console.log('       next4= ' + funcCounter());
+    funcCounter.set(100);
+    console.log('   after set 100');
+    console.log('       next5= ' + funcCounter());
+    console.log('       next6= ' + funcCounter());
     //    -----------------------------------------------------------------------------------------------------------------
+    //  Task:  sum(a)(b) = a+b.
+    function sum(a) {
+        return function (b) {
+            return (a + b);
+        }
+    }
+    console.log("Task  -  sum(a)(b)");
+    console.log("   sum(1)(-1)= " + sum(1)(-1));
+    console.log("   sum(1)(2)= " + sum(1)(2));
+    console.log("   sum(101)(99)= " + sum(101)(99));
+    //    -----------------------------------------------------------------------------------------------------------------
+    // String Buffer realization
+    function makeBuffer() {
+        var result = "";
+
+        function buffer(value) {
+//            if (value === undefined) {
+            if (arguments.length == 0) {
+                return result;
+            }
+            result = result + value;
+        };
+
+        buffer.clear = function () {
+            result = "";
+        }
+
+        return buffer;
+    }
+
+    var buffer = makeBuffer();
+    buffer('One');
+    buffer('  ');
+    buffer('Two');
+    buffer('  ');
+    buffer('Three');
+    buffer('  ');
+    buffer('Four');
+    buffer('  ');
+    buffer('Five');
+    console.log(buffer());
+    buffer.clear();
+    console.log(buffer());
+
+    buffer('  ');
+    buffer('0');
+    buffer('  ');
+    buffer('1');
+    buffer('  ');
+    buffer('2');
+    console.log(buffer());
+    //    -----------------------------------------------------------------------------------------------------------------
+    //    Сортировка
+    var users = [{
+//        name: "Вася",
+        name: "C",
+        surname: 'Иванов',
+        age: 20
+    }, {
+//        name: "Петя",
+        name: "B",
+        surname: 'Чапаев',
+        age: 25
+    }, {
+//        name: "Маша",
+        name: "A",
+        surname: 'Медведева',
+        age: 18
+    }];
+
+
+    /*
+     // по полю name (Вася, Маша, Петя) A, B, C
+     users.sort(function (a, b) {
+     return a.name > b.name ? 1 : -1;
+     });
+     console.log("Sort by name:");
+     users.forEach(function (item) {
+     console.log("   " + item.name)
+     });
+
+
+     // по полю age  (Маша, Вася, Петя)  A, C, B
+     users.sort(function (a, b) {
+     return a.age > b.age ? 1 : -1;
+     });
+     console.log("Sort by age:");
+     users.forEach(function (item) {
+     console.log("   " + item.name)
+     });*/
+
+
+    function byField(fieldName) {
+        return function (a, b) {
+            return a[fieldName] > b[fieldName] ? 1 : -1;
+        }
+
+    };
+    console.log("Sort by name:");
+    users.sort(byField('name'));
+    users.forEach(function (item) {
+        console.log("   " + item.name)
+    });
+    console.log("Sort by age:");
+    users.sort(byField('age'));
+    users.forEach(function (item) {
+        console.log("   " + item.name)
+    });
+
+    //    -----------------------------------------------------------------------------------------------------------------
+    //Фильтрация через функцию
+
+    var arr = [1, 2, 3, 4, 5, 6, 7];
+
+    console.log(arr.filter(function (a) {
+        return a % 2 == 0;
+    }));
+
+    function filter(arr, func) {
+        return arr.filter(f1(item){
+
+        });
+    }
+
+   filter(arr, function () {
+
+        return a % 2 == 0;
+    }); // 2,4,6
+
+    function inBetween(number, number2) {
+
+    }
+    //    alert(filter(arr, inBetween(3, 6))); // 3,4,5,6
+
+    //    alert(filter(arr, inArray([1, 2, 10]))); // 1,2
+
     //    -----------------------------------------------------------------------------------------------------------------
     //    -----------------------------------------------------------------------------------------------------------------
 </script>

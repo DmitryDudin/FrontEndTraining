@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    console.log("-------------------------------------------------------")
+    var arr = new Array("Яблоко", "Груша", "и т.п.");// редко используется
+    arr = new Array(2);// создаёт массив заданной длины
+    console.log("arr.length=" + arr.length);
+    console.log("arr= " + arr);
+    console.log("-------------------------------------------------------")
+    var fruits = ["Яблоко", "Апельсин", "Слива"];
+    console.log(fruits[0]);
+    fruits[5] = "newFruit";
+    console.log(fruits);
+    console.log("fruits[4]= " + fruits[4]);
+    console.log("array length= " + fruits.length);
+    console.log("-------------------------------------------------------")
+
+    //    В массиве может храниться любое число элементов любого типа.
+    fruits[6] = {ownerName: 'Magazin'};
+    console.log("fruits= " + fruits);
+    console.log("fruits[6].ownerName= " + fruits[6].ownerName);
+    console.log("-------------------------------------------------------")
+    //    Одно из применений массива – это очередь.
+    //    pop - Удаляет последний элемент из массива и возвращает его:
+    //    push - Добавляет элемент в конец массива:
+    //    shift - Удаляет из массива первый элемент и возвращает его:
+    //    unshift - Добавляет элемент в начало массива:
+    //    Методы push и unshift могут добавлять сразу по несколько элементов:
+
+    //    Массив – это объект, где в качестве ключей выбраны цифры, с дополнительными методами и свойством length
+    //    Ещё одно следствие – можно присваивать в массив любые свойства.
+    fruits.age = 33;
+
+    console.log("fruits.age= " + fruits.age)
+    console.log("-------------------------------------------------------")
+    console.log("Перебор массива 1:")
+    for (var i = 0; i < fruits.length; i++) {
+        console.log(fruits[i]);
+    }
+    //    Не используйте for..in для массивов
+
+    console.log("Перебор массива 2:")
+    for (key in fruits) { // выведет age !!!!!
+        console.log(fruits[key]);
+    }
+    console.log("-------------------------------------------------------")
+    //    Самый простой способ очистить массив – это arr.length=0.
+    fruits.length = 3;
+    console.log("Перебор массива после укорачивания:")
+    for (var i = 0; i < fruits.length; i++) {
+        console.log(fruits[i]);
+    }
+    console.log("-------------------------------------------------------")
+    var names = 'Маша, Петя, Марина, Василий';
+
+    var arrNames = names.split(', ');//массив из строки
+    for (var i = 0; i < arrNames.length; i++) {
+        console.log(arrNames[i]);
+    }
+    var strNames = arrNames.join("---");// склеивает строку из массива
+    console.log("strNames= " + strNames)
+    console.log("-------------------------------------------------------")
+    var numbers = ['one', 'two', 'three', 'four'];
+    //    Метод splice – это универсальный раскладной нож для работы с массивами.
+    //    Умеет все: удалять элементы, вставлять элементы, заменять элементы – по очереди и одновременно.
+    //    arr.splice(index[, deleteCount, elem1, ..., elemN])
+    numbers.splice(1, 1); // начиная с позиции 1, удалить 1 элемент
+    console.log("numbers= " + numbers);
+    console.log("numbers= " + numbers);
+
+    numbers.splice(0, 3, "ten", "nine")
+    console.log("numbers= " + numbers);
+    //    splice возвращает массив из удаленных элементов:
+    numbers.splice(2, 0, "сложный", "язык");//может вставлять элементы без удаления
+    console.log("numbers= " + numbers);
+
+    console.log("-------------------------------------------------------")
+    //    Метод slice(begin, end) копирует участок массива от begin до end, не включая end.
+    //    Исходный массив при этом не меняется.
+    console.log("-------------------------------------------------------")
+    //    по умолчанию sort сортирует, преобразуя элементы к строке.
+    function compareNumeric(a, b) {
+        if (a > b) return 1;
+        if (a < b) return -1;
+    }
+
+    var arr = [66, 1, 2, 15];
+
+    arr.sort(compareNumeric);
+    console.log("sorted arr= " + arr);
+    console.log("-------------------------------------------------------")
+    //    Метод arr.reverse() меняет порядок элементов в массиве на обратный.
+
+    //        Метод arr.concat(value1, value2, … valueN) создаёт новый массив,
+    //        в который копируются элементы из arr, а также value1, value2, ... valueN.
+    //    Если аргумент concat – массив, то concat добавляет элементы из него.
+
+    //    Метод «arr.indexOf(searchElement[, fromIndex])» возвращает номер элемента searchElement в массиве
+    console.log("-------------------------------------------------------")
+    var user = {
+        name: "Петя",
+        age: 30
+    }
+    var objKeys = Object.keys(user);
+    console.log("objKeys= " + objKeys);
+    console.log("-------------------------------------------------------")
+
+    var arr = ["Яблоко", "Апельсин", "Груша"];
+
+    arr.forEach(function (item, i, arr) {
+        console.log(i + ": " + item + " (массив:" + arr + ")");
+    });
+    //    Он для каждого элемента массива вызывает функцию callback.
+    //
+    //        Этой функции он передаёт три параметра callback(item, i, arr):
+    //
+    //    item – очередной элемент массива.
+    //        i – его номер.
+    //        arr – массив, который перебирается.
+    //    есть необязательные параметры
+
+    //    arr.filter(callback[, thisArg])
+    //    arr.map(callback[, thisArg])
+    //    arr.every(callback[, thisArg])
+    //    arr.some(callback[, thisArg])
+    //    arr.reduce(callback[, initialValue])  используется для вычисления на основе массива
+    //                                 какого-либо единого значения, иначе говорят «для свёртки массива»
+    //    arr.reduceRight
+
+    //    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+
+    console.log("-------------------------------------------------------")
+    //    В JavaScript любая функция может быть вызвана с произвольным количеством аргументов.
+    //    В JavaScript нет «перегрузки» функций
+    function go(a, b) {
+        alert("a=" + a + ", b=" + b);
+    }
+
+    go(1);     // a=1, b=undefined
+    go(1, 2);   // a=1, b=2
+    go(1, 2, 3); // a=1, b=2, третий аргумент не вызовет ошибку
+    console.log("-------------------------------------------------------")
+    var arr = [];
+    for (var i = 0; i < 1000; i++) arr[i] = 0;
+
+    function walkIn(arr) {
+        for (var key in arr) arr[key]++;
+    }
+
+    function walkLength(arr) {
+        for (var i = 0; i < arr.length; i++) arr[i]++;
+    }
+
+    function bench(f) {
+        for (var i = 0; i < 10000; i++) f(arr);
+    }
+
+    console.time("All Benchmarks");
+
+    console.time("walkIn");
+    bench(walkIn);
+    console.timeEnd("walkIn");
+
+    console.time("walkLength");
+    bench(walkLength);
+    console.timeEnd("walkLength");
+
+    console.timeEnd("All Benchmarks");
+    console.log("-------------------------------------------------------")
+
+</script>
+</body>
+</html>
