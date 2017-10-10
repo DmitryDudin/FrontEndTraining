@@ -167,6 +167,7 @@
     console.log('       next6= ' + funcCounter());
     //    -----------------------------------------------------------------------------------------------------------------
     //  Task:  sum(a)(b) = a+b.
+    console.log("------------------------------------");
     function sum(a) {
         return function (b) {
             return (a + b);
@@ -178,6 +179,7 @@
     console.log("   sum(101)(99)= " + sum(101)(99));
     //    -----------------------------------------------------------------------------------------------------------------
     // String Buffer realization
+    console.log("------------------------------------");
     function makeBuffer() {
         var result = "";
 
@@ -219,6 +221,7 @@
     console.log(buffer());
     //    -----------------------------------------------------------------------------------------------------------------
     //    Сортировка
+    console.log("------------------------------------");
     var users = [{
 //        name: "Вася",
         name: "C",
@@ -277,32 +280,86 @@
 
     //    -----------------------------------------------------------------------------------------------------------------
     //Фильтрация через функцию
-
+    console.log("------------------------------------");
     var arr = [1, 2, 3, 4, 5, 6, 7];
 
-    console.log(arr.filter(function (a) {
-        return a % 2 == 0;
-    }));
+    console.log("Simple even filtration: " + arr.filter(function (item) {
+            return item % 2 == 0;
+        }));
+
 
     function filter(arr, func) {
-        return arr.filter(f1(item){
-
-        });
+        /*return arr.filter(function (item) {
+         return func(item);
+         });*/
+        return arr.filter(func);
     }
 
-   filter(arr, function () {
+    function evenFunc() {
+        return function (item) {
+            //console.log("i= " + i); / / i - необязательный параметр
+            //console.log("arr= " + arr); // arr - необязательный параметр
+            return item % 2 == 0;
+        };
+    };
+    console.log("even filtered arr= " + filter(arr, evenFunc()));
+    //    console.log(arr);
 
-        return a % 2 == 0;
-    }); // 2,4,6
 
-    function inBetween(number, number2) {
-
+    function inBetween(from, to) {
+        return function (item) {
+            return (from <= item) && (item <= to);
+        }
     }
-    //    alert(filter(arr, inBetween(3, 6))); // 3,4,5,6
+    console.log("inBetween filtered arr= " + filter(arr, inBetween(3, 6))); // 3,4,5,6
 
-    //    alert(filter(arr, inArray([1, 2, 10]))); // 1,2
+    function inArray(paramArr) {
+        return function (item) {
+            return paramArr.includes(item);
+        }
+    }
+    console.log("inArray filtered arr= " + filter(arr, inArray([1, 2, 10, 7]))); // 1,2,7
 
     //    -----------------------------------------------------------------------------------------------------------------
+    //    Армия функций
+    console.log("------------------------------------");
+    function makeArmy() {
+        var shooters = [];
+
+        for (var i = 0; i < 10; i++) {
+
+            /*var shooter = function me() {//  2-й вариант
+             console.log("schoot -> " + me.i);
+             };
+             shooter.i = i;*/
+
+//            var shooter = new Function('', 'console.log("schoot -> '+ i +'")');  //  1-й вариант
+
+            var shooter = function (x) {//  3-й вариант
+                return function () {
+                    console.log("schoot -> " + x);
+                };
+            }(i);
+
+            shooters.push(shooter);
+        }
+
+        /*for (var i = 0; i < 10; i++)(function (i) {  //  4-й вариант
+         var shooter = function () {
+         console.log("schoot -> " + i);
+         };
+
+         shooters.push(shooter);
+         })(i);*/
+
+        return shooters;
+    }
+
+    var army = makeArmy();
+
+    army[0](); // стрелок выводит 10, а должен 0
+    army[5](); // стрелок выводит 10...
+    army[9](); // стрелок выводит 10...
     //    -----------------------------------------------------------------------------------------------------------------
 </script>
 </body>
