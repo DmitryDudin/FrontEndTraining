@@ -93,6 +93,45 @@
     //    А что, если мы хотим, чтобы порядок был именно таким, какой мы задали?
     //    делать все ключи нечисловыми, например, добавим в начало дополнительный символ '+'
     console.log("-------------------------------------------------------")
+    //getters and setters
+    console.log("getters and setters:");
+    function User(fullName) {
+        this.fullName = fullName;
+        Object.defineProperties(this, {
+                firstName: {
+                    get: function () {
+                        var arr = this.fullName.split(' ');
+                        return arr[0];
+                    },
+                    set: function (value) {
+                        var arr = this.fullName.split(' ');
+                        this.fullName = value + ' ' + arr[1];
+                    }
+                },
+                lastName: {
+                    get: function () {
+                        var arr = this.fullName.split(' ');
+                        return arr[1];
+                    },
+                    set: function (value) {
+                        var arr = this.fullName.split(' ');
+                        this.fullName = arr[0] + ' ' + value;
+                    }
+                }
+            });
+    }
+
+    var vasya = new User("Georgy Sviridov");
+
+    console.log(vasya.firstName); // Georgiy
+    console.log(vasya.lastName); // Sviridov
+
+    // запись
+    vasya.lastName = 'Glinka';
+    vasya.firstName = 'Mikhail';
+
+    console.log(vasya.fullName); // Mikhail Glinka
+    console.log("-------------------------------------------------------")
 
 
 </script>

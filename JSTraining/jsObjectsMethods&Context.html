@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //    Свойства-функции называют «методами» объектов.
+    //    Для доступа к текущему объекту из метода используется ключевое слово this.
+    //    Значение this называется контекстом вызова и будет определено в момент вызова функции.
+
+    console.log('-----------------------------------------------------------------');
+    var user = {
+        name: 'Ioann',
+        sayHi: function () {
+            console.log(this.name);
+        }
+    };
+    user.sayHi();
+
+    //    Любая функция может иметь в себе this.
+    //    Совершенно неважно, объявлена ли она в объекте или отдельно от него.
+    //    Значение this называется контекстом вызова и будет определено в момент вызова функции.
+
+    console.log('-----------------------------------------------------------------');
+    console.log('Object creation:')
+
+    function Animal(name) {
+        // this = {};
+
+        // в this пишем свойства, методы
+        this.name = name;
+        this.canWalk = true;
+
+        // return this;
+    }
+
+    function BigAnimal() {
+        this.name = "Мышь";
+        return {name: "Годзилла", age: 1};  // <-- возвратим объект
+    }
+
+    console.log(new BigAnimal);// Годзилла, получили объект вместо this ??? НЕА, получили мышь
+    console.log(new BigAnimal().name);// Годзилла, получили объект вместо this
+
+    function BigAnimal() {
+        this.name = "Мышь";
+        this.sayHi = function () {
+            console.log("Anilmal: " + this.name);
+        };
+        return "Годзилла"; // <-- возвратим примитив
+    }
+    console.log(new BigAnimal().name); // Мышь, получили this (а Годзилла пропал)
+    var animal = new BigAnimal();
+    animal.sayHi();
+
+    console.log('-----------------------------------------------------------------');
+    function User(firstName, lastName) {
+        // вспомогательная переменная
+        var phrase = "Привет";
+        //  вспомогательная вложенная функция
+        function getFullName() {
+            return firstName + " " + lastName;
+        }
+
+        this.sayHi = function () {
+            console.log(phrase + ", " + getFullName()); // использование
+        };
+    }
+
+    var vasya = new User("Вася", "Петров");
+    vasya.sayHi(); // Привет, Вася Петров
+    //    Те функции и данные, которые должны быть доступны для внешнего кода,
+    //    мы пишем в this – и к ним можно будет обращаться, как например vasya.sayHi(),
+    //    а вспомогательные, которые нужны только внутри самого объекта, сохраняем в локальной области видимости.
+    console.log('-----------------------------------------------------------------');
+
+    console.log("Task1 (return equals objects):");
+    var obj = {};
+    function A() {
+        return obj;
+    }
+    function B() {
+        return obj;
+    }
+
+    var a = new A;
+    var b = new B;
+
+    console.log(a == b); // true
+
+
+    console.log('-----------------------------------------------------------------');
+    console.log("Task2 (calculator):");
+    /*function Calculator() {
+        var result;
+        var x;
+        var y;
+        this.read = function () {
+            x = prompt('Get X=');
+            y = prompt('Get Y=');
+        };
+        this.sum = function () {
+            return Number(x) + Number(y);
+        };
+        this.mul = function () {
+            return x * y;
+        };
+    }
+    var calculator = new Calculator();
+    calculator.read();
+
+    console.log("Сумма=" + calculator.sum());
+    console.log("Произведение=" + calculator.mul());*/
+    console.log('-----------------------------------------------------------------');
+    console.log("Task3 (accumulator):");
+
+    function Accumulator(startingValue) {
+        this.value = +startingValue;
+        this.read = function () {
+            var newValue = +prompt('Add to '+this.value+' =');
+            this.value += newValue;
+        };
+    }
+    var accumulator = new Accumulator(1); // начальное значение 1
+    accumulator.read(); // прибавит ввод prompt к текущему значению
+    accumulator.read(); // прибавит ввод prompt к текущему значению
+    console.log(accumulator.value); // выведет текущее значение
+    console.log('-----------------------------------------------------------------');
+
+</script>
+</body>
+</html>
