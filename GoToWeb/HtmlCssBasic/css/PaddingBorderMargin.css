@@ -1,0 +1,75 @@
+.border-2 {
+    border: 2px solid red;
+}
+
+.border-10 {
+    border: 10px solid red;
+}
+
+.border-30 {
+    border: 30px solid red;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.padding-20 {
+    padding: 20px;
+}
+
+.padding-30 {
+    padding: 30px;
+}
+
+.margin-10 {
+    margin: 10px;
+}
+
+.margin-20 {
+    margin: 20px;
+}
+
+.margin-30 {
+    margin: 30px;
+}
+
+.outline-1 {
+    outline: 1px solid green;
+}
+
+.outline-2 {
+    outline: 2px solid green;
+}
+
+.outline-3 {
+    outline: 3px solid green;
+}
+
+.outline-5 {
+    outline: 5px solid green;
+}
+
+.outline-offset-20 {
+    outline-offset: 20px;
+}
+
+.outline-offset-m-20 {
+    outline-offset: -20px;
+}
+
+.outline-offset-m-30 {
+    outline-offset: -30px;
+}
+
+.outline-offset-m-40 {
+    outline-offset: -40px;
+}
+
+.underline {
+    text-underline: blue;
+}
+
+.box-sizing-bb {
+    box-sizing: border-box;
+}

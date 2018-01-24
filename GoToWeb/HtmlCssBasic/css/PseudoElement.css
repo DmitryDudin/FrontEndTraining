@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.exmaple h1:before {
+    content: "Insert Before ";
+}
+
+.exmaple h1:after {
+    content: " Insert After";
+}
+
+.exmaple:before {
+    content: url("../img/zakat.png");
+}
+
+.exmaple h1:first-letter {
+    color: red;
+}
+
+.exmaple p:first-line {
+    color: blue;
+}
+
+.wrap {
+    width: 500px;
+    outline: 1px solid red;
+    padding: 10px;
+}
+
+.wrap:after {
+    content: "";
+    display: block;
+    height: 20px;
+    outline: 1px solid blue;
+    background-color: green;
+}

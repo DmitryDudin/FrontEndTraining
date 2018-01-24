@@ -1,0 +1,51 @@
+.backgrd {
+    background-color: cyan;
+}
+
+.outline-1-r {
+    outline: 1px solid red;
+}
+
+.outline-1-b {
+    outline: 1px solid blue;
+}
+
+.border-5 {
+    border: 5px solid red;
+}
+
+.border-10 {
+    border: 10px solid red;
+}
+
+.padding-4 {
+    padding: 4px;
+}
+
+.padding-5 {
+    padding: 5px;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.h-500 {
+    height: 500px;
+}
+
+.w-500 {
+    width: 500px;
+}
+
+.margin-30 {
+    margin: 30px;
+}
+
+.i-b {
+    display: inline-block;
+}
+
+.box-sizing-bb {
+    box-sizing: border-box;
+}

@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    outline: 2px solid black;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.div1 {
+    background-color: red;
+    height: 50px;
+}
+
+.div2 {
+    background-color: yellow;
+    height: 50px;
+    position: relative;
+    top: 20px;
+    left: -20px;
+}
+
+.div3 {
+    background-color: blue;
+    height: 50px;
+}
+
+/*----------------------------------------------------------------------*/
+
+.div11 {
+    background-color: red;
+    height: 50px;
+}
+
+.div22 {
+    background-color: yellow;
+    height: 50px;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+}
+
+.div33 {
+    background-color: blue;
+    height: 50px;
+}
+
+/*----------------------------------------------------------------------*/
+
+.div111 {
+    background-color: red;
+    height: 50px;
+}
+
+.div222 {
+    background-color: yellow;
+    height: 50px;
+    position: fixed;
+    top: 500px;
+    left: 80px;
+}
+
+.div333 {
+    background-color: blue;
+    height: 50px;
+}
+
+/*----------------------------------------------------------------------*/
+
+.div1z {
+    background-color: red;
+    height: 50px;
+}
+
+.div2z {
+    background-color: yellow;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    z-index: 2;
+
+}
+
+.div3z {
+    background-color: blue;
+    height: 50px;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    z-index: 1;
+}
+
+.wrapz {
+    outline: 2px solid black;
+    width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/*----------------------------------------------------------------------*/
+
+.wrape {
+    outline: 2px solid black;
+    width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.div1e {
+    background-color: red;
+    height: 50px;
+}
+
+.div2e {
+    background-color: yellow;
+    /*height: 50px;*/
+    /*width: 100px;*/
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    right: 20px;
+    bottom: 10px;
+
+}
+
+.div3e {
+    background-color: blue;
+    height: 50px;
+}
+
+/*----------------------------------------------------------------------*/
+.wrapp {
+    outline: 2px solid black;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.div1p {
+    background-color: red;
+    height: 50px;
+}
+
+.div2p {
+    background-color: yellow;
+    height: 50px;
+}
+
+.div3p {
+    background-color: blue;
+    height: 50px;
+}
+
+.paranja {
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.popup {
+    width: 500px;
+    height: 300px;
+    border: 2px solid #CCCCCC;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 200px;
+    /*bottom:0;*/
+    margin: auto;
+    background: #cccccc;
+
+}
+
+/*----------------------------------------------------------------------*/
+.close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+    font: bold 12px Arial;
+    border-radius: 50%;
+    line-height: 20px;  /*todo центрирование по вертикали - задаём высоту линии равной высоте элемента*/
+
+    cursor: pointer;
+}

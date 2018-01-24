@@ -1,0 +1,135 @@
+/*font-family: Open Sans, sans-serif;*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    background-image: url('../img/background2.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 40px 0 600px;
+}
+
+.header {
+
+}
+
+.logo {
+    margin-left: 40px;
+    float: left;
+}
+
+.nav {
+    float: right;
+    font-size: 0;
+    margin-top: 17px;
+    margin-right: 24px;
+}
+
+.nav > li {
+    /*float: left;  !*todo 1-й вариант чтобы сделать пункты списка в одну строку*!*/
+    display: inline-block; /*todo 2-й вариант*/
+    margin: 0 16px;
+    position: relative;
+}
+
+.nav > li > a {
+    font: 700 15px 'Open Sans', sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: block;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.nav > li > a:hover {
+    color: #000;
+}
+
+.nav > li:hover .subnav {
+    display: block;
+
+}
+
+.subnav {
+    position: absolute;
+    top: 100%;
+    left: 50%; /*todo просто от ширины родителя - не подходит, т.к. разные ширины*/
+    transform: translateX(-50%); /*todo плюс надо учитывать собственную ширину*/
+    width: 160px;
+    padding: 28px 0 0;
+    display: none;
+}
+
+.subnav li {
+    background-color: #000;
+    position: relative;
+}
+
+.subnav li:last-child::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000;
+    width: 100%;
+    height: 12px;
+}
+
+.subnav li:first-child::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background-color: #000;
+    width: 100%;
+    height: 12px;
+}
+
+.subnav a {
+    font: 800 15px 'Open Sans', sans-serif;
+    display: block;
+    line-height: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 0 23px;
+    border-left: 3px solid #000;
+    border-right: 3px solid #000;
+}
+
+.subnav::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #000;
+    width: 11px;
+    height: 11px;
+    transform: rotate(45deg);
+}
+
+.subnav a:hover {
+    color: #000;
+    background-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+

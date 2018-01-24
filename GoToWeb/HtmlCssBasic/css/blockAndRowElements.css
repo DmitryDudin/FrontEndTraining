@@ -1,0 +1,7 @@
+p, h1, h2 {
+    outline: 1px solid blue;
+}
+
+a, strong, span, img {
+    outline: 1px solid red;
+}

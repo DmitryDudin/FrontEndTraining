@@ -1,0 +1,39 @@
+
+* {
+    padding: 0px;;
+    margin: 0px;
+}
+
+div.outline-1 {
+    width: 500px;
+    height: 500px;
+
+    /*background-color: red;*/
+
+    /*background-image: url("../img/zakat.png");
+    background-repeat: no-repeat;
+    background-position: center center;*/
+
+    /*background-image: url("../img/line.jpg");*/
+
+    /*background-image: url("../img/Kosigin.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed; !*будет ли перемещаться картинка при scroll-e*!
+*/
+    background: url("../img/Kosigin.jpg") no-repeat fixed;
+    background-size: auto auto;
+}
+
+div {
+    background-color: rgba(255, 0, 0, 0.3);
+    background-image: url("../img/zakat.png");
+    background-repeat: no-repeat;
+
+    background-clip: border-box;
+    background-origin: padding-box;
+
+    /*background-size: 70% auto;*/
+    background-size: cover;
+
+
+}

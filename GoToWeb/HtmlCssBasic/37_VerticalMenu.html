@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VerticalMenu</title>
+    <link rel="stylesheet" href="css/37_VerticalMenu.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
+<body>
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+<div class="wrap">
+    <div class="aside">
+        <div class="title">General</div>
+        <ul class="nav">
+            <li>
+                <a class="dash" href="#">Dashboard</a>
+                <ul class="subnav">
+                    <li><a href="#">Dashboard1</a></li>
+                    <li><a href="#">Dashboard2</a></li>
+                    <li><a href="#">Comming Soon</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="lay" href="#">Layouts</a>
+                <ul class="subnav">
+                    <li><a href="#">Layouts 1</a></li>
+                    <li><a href="#">Layouts 2</a></li>
+                    <li><a href="#">Layouts 3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="page" href="#">Pages</a>
+                <ul class="subnav">
+                    <li><a href="#">Pages 1</a></li>
+                    <li><a href="#">Pages 2</a></li>
+                    <li><a href="#">Pages 3</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!----------------------------------->
+        <div class="title">Elemens</div>
+        <ul class="nav">
+            <li>
+                <a href="#">Invoice</a>
+            </li>
+            <li>
+                <a href="#">Charts</a>
+            </li>
+            <li>
+                <a href="#">Snippents</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+<script src="js/37_VerticalMenu.js"></script>
+</body>
+</html>
+
+
+Меню как правило создаются при помощи списков.
+Стандартный подход: ul->li->a
+
+Все текстовые свойсва наследуются.
+
+line-height  - центрирует по вертикали
+
+В меню стили применяются к ссылкам.
+
+Картинки в меню можно сделать тегами - что не лучший вариант,
+лучше сделать псевдоэлементами before, after, и сделать картинки фоновым изображением.
+
+Свойство display - не поддержует трансформацию(плавность изменения),
+тогда элемент можно было бы скрывать высотой 0px и добавить плавность измененияю
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

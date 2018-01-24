@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selectors</title>
+    <link href="css/common.css" rel="stylesheet"/>
+    <link href="css/Selectors.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="wrap">
+    <p>Параграф 1</p>
+    <ul>
+        <li><a href="https://www.yandex.ua">YANDEX</a></li>
+        <li><a href="https://www.google.com.ua">GOOGLE</a></li>
+        <li></li>
+        <li><a href="https://gotoweb.com.ua">GOTOWEB</a></li>
+    </ul>
+
+    <h1>Заголовок первого уровня</h1>
+    <p>Параграф 2</p>
+    <p>Параграф 3</p>
+    <p>Параграф 4</p>
+    <p></p>
+    <p>Параграф 5</p>
+    <p>Параграф 6</p>
+    <h2>Первый заголовок второго уровня</h2>
+    <h2>Второй заголовок второго уровня</h2>
+</div>
+<br><br><br>
+<form>
+    <input type="text" name="login" placeholder="login"/>
+    <input type="password" name="pass" placeholder="password"/>
+    <p>Укажите ваш возраст</p>
+    <input type="checkbox" name="age1" value="age1"/><span>от 10 до 18</span><br/>
+    <input type="checkbox" name="age2" value="age2" disabled/><span>от 18 до 25</span><br/>
+    <input type="checkbox" name="age3" value="age3"/><span>от 25 до 40</span><br/>
+    <p>Укажите ваш пол</p>
+    <input type="radio" name="sex" value="men"/><span>Мужчина</span><br/>
+    <input type="radio" name="sex" value="women"/><span>Женщина </span><br/>
+
+</form>
+</body>
+</html>
+
+<!--todo
+
+1. *{} - выборка всех элементов на странице
+2. p{} - by tag <p>
+3. #id_name - by id, селекторы по идентификатору в css не желательны, больше изпользуются для выборки из javascript
+4. .class_name - by class
+5. мультиселекторы
+    - .class_1.class_2 - multiclasses для элементов у которых заданы несколько классов
+    - .class_1, .class_2 - найти все элементы с классои class_1 и элементы с классом class_2
+6. вложенные селекторы:
+    - body p span  - <p> может быть не прямой потомок body, а <span> непрямой потомок <p>
+    - #id_name .class_name
+7. дочерние селекторы
+    - span > p  - элемент <p> прямой потомок <span>
+8. соседние селекторы
+    - h2 + span  - выберет первый span следующий за h2, т.е.  именно сосед следующий за первым тегом
+10. родственные селекторы
+    - h2~span  - все span, которые идут после h2
+11. селекторы по аттрибутам - испольозуются при работе с формами
+    - [class] {}  - выборка все элементов, у которых есть аттрибут class
+    - [id] {}
+    - [id="id_name"] {}  - по аттрибуту и его значению
+    - [id^="i"] {}  - выборка всех элементов у которых аттрибут id начинается с символа 'i'
+    - [src$=".img"] {}  - выборка всех элементов у которых аттрибут src зааканчивается насимвол '.img'
+    - [href*="goal"] {}  - выборка всех элементов у которых аттрибут href содержит 'goal'
+    - [class~="class_name"] {}  - выборка всех элементов у которых аттрибут class содержит слово 'class_name'
+    - [class|="main"] {}  - выборка всех элементов у которых аттрибут class содержит 'main' и после идёт дефис,
+        либо имя класса "main"
+
+
+Псевдоклассы:  (задаются через : )
+- состояний
+    :link - непосещенная ссылка
+    :visited - посещенная ссылка
+    :hover - сосотояние наведение мышкой
+    :active - нажали и держим мышку
+    :focus - элемент в фокусе
+
+    :empty - для пустых(даже без пробелов) элементов
+
+    :first-child - первый дочерний элемент, элемент должен быть первым по порядку (например если p стоит после span -
+        то он уже не первый)
+    :last-child - последний д.э. элемент должен быть последним по порядку
+    :nth-child(2) - выберет элем. заданного типа, который стоит 2-й по порядку
+    :nth-last-child(4) -
+
+    :first-of-type - выберется первый элемент заданного типа
+    :last-of-type -
+    :nth-of-type(2) - выберет второй(также можно even, odd, 3n+1 где n=0.....+infinity) элемет по типу
+    :nth-last-of-type(3) - выберет третий элемент по типу  сконца
+
+    :only-of-type - выберет элемент, который единственный на странице
+
+    li:not(:first-of-type) a - выберет все li но только не первый по типу
+    li:not(:last-of-type) a - выберет все li но только не последний по типу
+    :not([href="one.ru"]) - выберет все элементы которые не содержат href="one.ru"
+
+ - для форм:
+    - :focus
+    - :checked - для checkbox & radiobutton
+        input:checked + span  - выберет span следующий за выбранным checkbox-ом или radiobutton
+    - :disabled - элементы у которых установлен disabled
+    - :enabled - все что без disabled
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>41_Animation</title>
+    <link rel="stylesheet" href="css/41_Animation.css">
+</head>
+<body>
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+<div class="test1"></div>
+<div class="test2"></div>
+<div class="test3"></div>
+<div class="test4"></div>
+<div class="test5"></div>
+<div class="test6"></div>
+
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est facere non officia omnis provident quam quia rerum
+    tenetur? Accusantium cum debitis delectus ipsa laborum magni quaerat tenetur totam velit voluptatum!</p>
+
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+</body>
+</html>
+
+css переходы - transition - есть недостаток: только начальное и конечное состояние
+
+Анимация - более функциональный и гибкий инструмент
+Этапы создания:
+1) создать ключевые кадры
+    add-правило определяет перечень ключевых кадров
+    @keyframes animation_name{
+
+        0% {   //ключевой кадр1
+            margin-left: 0;
+        }
+        30% { //ключевой кадр2
+            margin-left: 500px;
+        }
+        70% { //ключевой кадр3
+            margin-left: 300px;
+        }
+        100% { //ключевой кадр4
+            margin-left: 800px;
+        }
+    }
+
+------
+группировка ключевых кадров:
+
+10%, 30%, 50%, 70%, 90% {
+transform: translateX(-10px);
+}
+20%, 40%, 60%, 80% {
+transform: translateX(10px);
+}
+
+2) задать параметры самой анимации
+animation-name: myAnim;
+animation-duration: 3s;  - задает продолжительность анимации.
+animation-timing-function: ease; //или qubic-bezier  - задает временную функцию анимации.
+animation-delay: 2s; //устанавливает задержку анимации
+animation-iteration-count: 3;  – запустить несколько раз (0 - отмена, infinite)
+animation-direction: alternate;  – задает направление повтора анимации.
+animation-fill-mode: both; – состояние до и после анимации.
+
+animation-play-state - остановка/запуск анимации. (running, paused)
+
+
+или        animation: myAnim 3s ease 2s 3 alternate running;
+animation: anim_name duration timing-func delay iter direction play-state;
+
+- допустимы множественные анимации
+    движение текста
+    подёргивания
+
+

@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.block2, .block1 {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    margin-top: 10px;
+
+    /*transition-duration: 4s;
+    transition-property: background-color, width;
+    transition-timing-function:  ease;
+    transition-delay: 2s;*/
+    /*transition: width ease 4s 2s;*/
+    transition: width 2s cubic-bezier(0.37, -1.02, 0.83, 0.67) 0s,
+    background-color 3s ease 1s,
+    height 6s steps(8, start);
+}
+
+.block1:hover {
+    background-color: blue;
+    width: 800px;
+    height: 600px;
+}

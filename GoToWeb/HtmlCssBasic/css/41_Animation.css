@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin-bottom: 5px;
+    /*transition: all 2s;*/ /*todo через transition*/
+}
+
+.test1 {
+    /*margin-left: 800px; !*todo через transition*!*/
+
+    /*animation-name: myAnim;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+*/
+    animation: myAnim 3s ease 2s 3 alternate running,
+    myAnim2 3s ease 2s 3 alternate running;
+}
+
+body:hover .test1 {
+    animation-play-state: paused;
+}
+
+body:hover .test2 {
+    animation-name: myAnim;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+
+}
+
+body:hover .test3 {
+    animation-name: myAnim;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-delay: -2s;
+
+}
+
+body:hover .test4 {
+    animation-name: myAnim;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+
+}
+
+body:hover .test5 {
+    animation-name: myAnim;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+}
+
+body:hover .test6 {
+    animation-name: myAnim;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0.9, -0.46, 0.39, 1.45);
+}
+
+@keyframes myAnim {
+    0% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: 800px;
+    }
+}
+
+/*-------------------------------------------------*/
+
+/*todo множественные анимации*/
+
+@keyframes myAnim2 {
+    0% {
+        background-color: red;
+    }
+    100% {
+        background-color: blue;
+    }
+}
+
+/*-------------------------------------------------*/
+/*todo elem p motion*/
+p {
+    width: 50%;
+    margin: 0 auto;
+    outline: 2px solid red;
+    animation: myP 2s;
+
+}
+
+@keyframes myP {
+    0% {
+        transform: translateX(-1500px);
+    }
+    70% {
+        transform: translateX(200px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+/*---------------------------------------------------------*/
+@keyframes myP1 { /*todo подёргивание элемента*/
+    0% {
+        transform: translateX(0px);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+p:hover {
+    animation: myP1 1s linear;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

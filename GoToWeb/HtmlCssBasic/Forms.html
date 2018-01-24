@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    <link href="css/Forms.css" rel="stylesheet"/>
+    <link href="css/common.css" rel="stylesheet"/>
+</head>
+<body>
+
+<form method="get" action="" name="" enctype="  ">
+    <input type="hidden"/>
+    <fieldset>
+        <legend>Personal:</legend>
+        <input type="text" name="login" placeholder="login" value="MIke"/><br/>
+        <input type="password" name="password" placeholder="password" required/><br/>
+        <input type="email" name="email" placeholder="email" required value="mail@ru"/><br/>
+        <input type="search" name="search" placeholder="search"/><br/>
+    </fieldset>
+
+    <fieldset>
+        <legend>Hobby</legend>
+        <label>
+            <input type="checkbox" name="machine" value="lada" checked="checked"/>Opel<br/>
+        </label>
+        <input type="checkbox" name="food" value="bread"/>Lada<br/>
+        <input type="checkbox" name="hunt" value="Hunt"/>Lada<br/>
+    </fieldset>
+
+    <input type="radio" name="sex" value="man"/>Man<br/>
+    <input type="radio" name="sex" value="woman"/>Woman<br/>
+
+
+    <input type="file" name="file"/><br/>
+
+    <input type="submit" value="Submit"/><br/>
+    <input type="button" value="InputButton"/><br/>
+    <input type="reset" value="Reset"/><br/>
+    <button>Button</button>
+    <br/>
+    <button type="button">ButtonTypeButton</button>
+    <br/>
+
+    <select name="selectList">
+        <option value="apple">Apple</option>
+        <option value="orange">Orange</option>
+        <option value="banan">Banan</option>
+        <option value="tomato">Tomato</option>
+        <option value="patato" selected>Potato</option>
+    </select><br/>
+    <textarea placeholder="Enter text here..."></textarea><br/>
+    <label> Same label:
+        <input type="text" placeholder="same text"/>
+    </label><br/><br/>
+
+    <input id="imp_text" type="text" placeholder="Importent text"/>
+    <br/> <br/> <br/> <br/>
+    <label for="imp_text"> Label for Importent text:</label>
+
+</form>
+
+</body>
+</html>
+
+<!--todo
+ - form - блочный элемент
+ - по умолчанию применяется метод GET
+ - данные аутентификации отправляем методом POST
+ - аттрибут name необходим когда на странице несколько форм
+ - аттрибут action
+ - аттрибут  enctype чтобы отправить на сервер файл
+ - аттрибут
+ - как правило на форме поля данных и кнопка "отправить данные"
+
+ - одноверменно на сервер может отправиться только одна форма
+
+ - input - строчный элемент
+    - type тип поля
+    - name идентификация поля
+
+- input submit - для отправки на сервер
+
+- аттрибут placeholder - подсказка
+- аттрибут value - установка значения
+- аттрибут checked - установка checkbox
+- аттрибут disabled - дезактивация
+- аттрибут required - поле обязательное для заполнения
+
+
+- submit - отправка данных на сервер
+- buttom - просто кнопка, нажатие на которую можно обработать с помощью javascript
+- reset - сброс данных полей ввода в default состояние
+
+- button - альтернатива для input submit
+- button type=button- альтернатива для input button
+
+- input hidden - для записи данных для работы javascript
+
+- select option- для создания выпадающего списка
+   multipul - для множественного выбора
+   size - для начального размера
+   optgroup - группировка элементов, label - название группы
+
+- textarea - множественный ввод текста
+    resize - как можно растягивать поле
+
+- label - использутся как обёртка к тегу input, добавляет кликабельность по тексту
+    может стоять отдельно, и чтобы связать с input необходимо задать id у input и for у label
+
+- fieldset - для группировки полей ввода
+    tag legend - для именования групп
+
+-

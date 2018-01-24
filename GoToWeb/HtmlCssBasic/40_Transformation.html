@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>40_Transformation</title>
+    <link rel="stylesheet" href="css/40_Transformation.css">
+</head>
+<body>
+<!--<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>-->
+
+<div class="yellow"></div>
+<img src="img/arrow1.png" alt="">
+<div class="green"></div>
+<div class="blue"></div>
+
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+<div style="width: 100%; height:400px; position: relative;">
+    <div class="red"></div>
+</div>
+
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+<div class="matrix"></div>
+
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+</body>
+</html>
+
+Система координат в css:
+
+        |-Y
+        |
+-X______|______+X
+        |
+        |
+        |+Y
+
+Свойства трансформации воздействуют на тот элемент, к которому применяются.
+Есть аналогия с относительным позиционированием(когда место бронируется).
+Все трансформации применяются относительно центра целевого элемента!!!!!!!!!
+
+Свойство трансформации transform:
+- выводит целевой элемент из потока
+
+- translateX(100px) - смещает вправо на 100px
+- translateY(100px) - смещает вниз на 100px
+- translateX(100px) translateY(100px)  =  translate(100px, 100px)
+    translate(100px) = translate(100px, 0)
+
+- можно задавать смещение в %, при этом процент берётся от размера самого элемента(а не родителя как обычно)
+
+- scaleY(2) - масшабируемость, увеличение элемента в 2 раза относительно центра по оси Y
+    scaleX(2) - по обоим осям на 2
+    scale(2,0.5) - по двум осям одновременно
+    scale(-1,-1) - зеркально относительно оси Х и Y
+
+- rotate(45deg) - поворот на 45 градусов
+    rotate(720deg) - когда элемент нужно вращать вокруг оси два раза
+
+- поворот элементов - вращает их оси X,Y
+    transform: rotate(90deg) translateX(100px); - переместит элемент вниз
+
+- можно перечислять множество функций трасформации подряд
+
+- skewY(20deg) - вращение плоскости
+    skew(30deg, 40deg)
+
+- transform-origin: 50% 50%; - устанавливает точку отсчета трансформации (значение по умолчанию)
+    transform-origin: 200% 200%; - можно и так
+
+- практическое применение:
+    1) выравнивание по центру
+    2) применение трансформации псевдоэлементов
+    3) матрица трансформаций: значения задаются не градусами, а числами
+    transform:matrix(scaleX, skewX, skewY, scaleX, translateX, translateY)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

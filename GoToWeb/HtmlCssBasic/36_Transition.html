@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transition</title>
+    <link rel="stylesheet" href="css/36_Transition.css">
+</head>
+<body>
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+<div class="block1"></div>
+<div class="block2"></div>
+
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+</body>
+</html>
+
+Transition - плавные переходы
+
+- transition-duration 2s (2ms) -  время смены свойств
+- transition-property: background-color;  - свойства которые необходимо изменять, по умолчанию all
+- transition-timing-function: ease; - управление скоростью-ускорением изменения свойства
+cubic-bezier - ручной вариант функции изменения скорости
+http://cubic-bezier.com/#.17,.67,.83,.67
+http://easings.net/
+-  ransition-delay: 2s; - установить задержку перед изменением свойства
+- изменение размеров элемента затрагивает положение соседних элементов
+- не все свойства можно анимировать, список возсожного
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties
+
+- возможны только два состояния, без промежуточных
+
+- задание в виде шагов     height 6s steps(4, start); height 6s steps(4, end);
+
+
+
+
+

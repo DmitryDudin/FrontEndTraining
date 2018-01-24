@@ -1,0 +1,23 @@
+p#first {
+    /*font-family: 'Times New Roman', Arial, Impact, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    !*font-variant: small-caps; !*варианты написания строчных букв*!*!
+    line-height: 40px; !*высота строки*!*/
+
+    font: italic normal bold 20px/50px Tahoma, Verdana, 'Times New Roman', Impact, Arial, serif;
+    color: rgba(0, 128, 0, 0.5);
+}
+
+.t-a-center {
+    text-align: center;
+}
+
+.t-i-40 {
+    text-indent: 40px;
+}
+
+.l-s-5 {
+    letter-spacing: 5px;
+}

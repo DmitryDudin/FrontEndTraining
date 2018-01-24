@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>42_NoStandartFontsConnection</title>
+    <link rel="stylesheet" href="css/42_NoStandartFontsConnection.css">
+    <!--<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,900" rel="stylesheet">-->
+</head>
+<body>
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dolorum ducimus est exercitationem magni,
+    provident quae quia repellendus sed tempora! Impedit minus natus placeat praesentium quidem sequi sint temporibus!
+    Ad aliquam aspernatur atque commodi corporis culpa dolor dolores dolorum ea eaque eligendi enim est, illo incidunt
+    ipsam itaque iure laboriosam laudantium libero minus necessitatibus nihil non, odit optio placeat porro possimus
+    provident quae quaerat quos reiciendis sit soluta ut? Cupiditate, dolor exercitationem fuga itaque laborum obcaecati
+    pariatur quia recusandae similique suscipit? Adipisci alias beatae, corporis cum cupiditate enim ipsam laboriosam
+    maxime modi neque nobis nostrum quae sunt ullam vero voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing
+    elit. A aperiam architecto cum deleniti deserunt ducimus eos hic, id incidunt ipsa laboriosam maxime nam
+    necessitatibus nemo nesciunt nisi numquam officia perspiciatis possimus quam quibusdam quod sequi sit ullam ut vero
+    voluptate, voluptatem. Explicabo facilis illo minus numquam provident quod, ratione sunt suscipit tempora? Aperiam
+    commodi consectetur ea repellat tempore tenetur vel veritatis voluptas. Architecto dolore doloribus eveniet
+    exercitationem hic illo magnam maiores nam quasi quibusdam totam, veniam voluptas! Accusantium asperiores aspernatur
+    beatae consectetur consequatur deleniti dolorem ea esse, est fuga impedit ipsa quam quos reprehenderit tempore ut
+    velit. Beatae, quod, repellat.</p>
+
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+</body>
+</html>
+
+Можно подключать онлайн-шрифты, а можно локально.
+
+- онлайн Шрифты google: https://fonts.google.com/
+    или другой вариант - в файл css вставляем
+        @import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,900');
+
+- локально через @font-face - правило
+
+- Форматы файлов шрифтов:  - потому что пока нет единого формата шрифтов, понятного каждому браузеру
+1) ttf -
+2) woff
+3) woff2 - крут
+4) eot - for InternetExplorer
+
+- для кроссбраузерности шрифты перечисляем в созданом правиле по порядку
+
+- url("../fonts/Lato-Regular.woff2") format('woff2'), - format() указывается для браузера
+
+- local(My_Name_Lato), - браузер прверит есть ли у него в кеше такой шрифт, и если есть не будет его качать,
+    применяется для мобильных приложений
+
+- подключение шрифтов @font-face необх. делать в начале файла css
+
+- чтоб bold & italic корректно работали необходимо дополнительно задать определиние этих шрифтов
+    имя шрифта тоже
+
+- файл шрифта может достаточно много весить (около 0.5Мб) что критично для мобильников
+    поэтому через https://fontstorage.com/ru/category/ можно скачать web-шрифт
+    и можно использовать lato.css - где записаны основные правила
+
+- на ресурсе https://www.fontsquirrel.com/tools/webfont-generator  - можно из дизайнерского
+    тяжеловесного шрифта сгенерировать легковесный web-шрифт
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

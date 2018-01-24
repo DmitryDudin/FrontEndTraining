@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shadow</title>
+    <link rel="stylesheet" href="css/35_Shadows.css">
+</head>
+<body>
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+<div class="wrap">
+    <div class="block"></div>
+    <p class="text">Lorem ipsum dolor sit amet elit.</p>
+</div>
+
+</body>
+</html>
+
+
+Тень находится за элементом или внутри.
+Тень имеет форму элемента.
+
+Тени можно задавать двумя способами:
+- box-shadow - задаёт тень для контейнеров
+синтаксис:
+box-shadow: inset 1px 2px 3px 4px black;
+1px -  смещение тени по горизонтали
+2px - смещение тени по вертикали
+3px - размытие тени, не может быть отрецательным
+4px - растяжение(если отрецательное то сжатие) тени
+
+black - цвет тени, если не задан то берётся по умолчанию
+inset - означает что тень должна быть внутри элемента, внутренняя тень
+
+
+- text-shadow - тень для текста
+text-shadow: 1px 2px 4px green;
+1px - смещение по горизонтали
+2px - смещение по вертикали
+4px - размытие
+green - цвет
+
+- можно одновременно задавать несколько теней:  box-shadow: 0px 0px 5px 5px green, 5px 5px 5px 5px red;
+    тени которые расположены в списке выше более превалирует.
+

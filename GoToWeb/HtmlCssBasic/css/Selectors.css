@@ -1,0 +1,70 @@
+li, p {
+    background-color: yellow;
+    height: 20px;
+    padding: 0;
+    margin: 0 0 3px 0;
+}
+
+/*a:link {
+    color: blue;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    color: orange;
+}
+
+a:focus {
+    color: aqua;
+}
+
+a:active {
+    color: red;
+}*/
+
+/*
+p:empty {
+    background-color: red;
+}
+
+li:empty {
+    background-color: red;
+}*/
+
+/*p:first-child {
+    color: red;
+}
+
+p:first-child{
+    color: blue;
+}*/
+
+/*
+p:last-of-type {
+    background-color: cadetblue;
+}*/
+
+/*
+.wrap h1{
+    color:red;
+}*/
+
+input:focus {
+    border: 1px solid blue;
+}
+
+input:enabled + span {
+    color: aqua;
+}
+
+input:checked + span {
+    color: red;
+}
+
+input:disabled + span {
+    color: green;
+}
+

@@ -1,0 +1,24 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.linear {
+    width: 400px;
+    height: 400px;
+
+    outline: 1px solid red;
+
+    background: linear-gradient(45deg, green, yellow, red, blue);
+
+}
+
+.radial {
+    width: 400px;
+    height: 400px;
+
+    outline: 1px solid red;
+
+    background: radial-gradient(green, yellow);
+}

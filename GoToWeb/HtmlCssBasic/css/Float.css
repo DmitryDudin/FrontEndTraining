@@ -1,0 +1,118 @@
+img.zakat {
+    width: 50%;
+    float: left;
+    outline: 2px solid blue;
+}
+
+p {
+    outline: 2px solid red;
+}
+
+.block1 {
+    /*width: 500px;*/
+    height: 50px;
+    background-color: red;
+    float: left;
+}
+
+.block2 {
+    height: 100px;
+    background-color: blue;
+    outline: 2px solid black;
+}
+
+.block3 {
+    width: 500px;
+    height: 50px;
+    background-color: red;
+    float: left;
+}
+
+.block4 {
+    height: 100px;
+    background-color: blue;
+    outline: 2px solid black;
+}
+
+.footer {
+    clear: both;
+}
+
+/*------------------------------------*/
+.variant1 .header {
+    background-color: red;
+    text-align: right;
+}
+
+.variant1 .header:after {
+    clear: both;
+    content: '';
+    display: block; /*для того чтобы элемент не стал inline-block*/
+}
+
+.variant1 img.water {
+    float: left;
+}
+
+/*------------------------------------*/
+
+.variant2 .header {
+    background-color: green;
+}
+
+.variant2 .header:after {
+    clear: both;
+    content: '';
+    display: block; /*для того чтобы элемент не стал inline-block*/
+}
+
+.variant2 p {
+    float: right;
+    text-align: right;
+    background-color: yellow;
+}
+
+/*------------------------------------*/
+.header1 {
+    background-color: red;
+    height: 100px;
+}
+
+.left1 {
+    outline: 3px solid green;
+    height: 50px;
+    width: 200px;
+    /*display: inline-block;*/ /*первый вариант*/
+    float: left; /*второй вариант*/
+}
+
+.center1 {
+    outline: 3px solid blue;
+    height: 50px;
+    width: 300px;
+    /*display: inline-block;*//*первый вариант*/
+    float: left; /*второй вариант*/
+
+}
+
+.right1 {
+    outline: 3px solid black;
+    height: 50px;
+    width: 200px;
+    /*display: inline-block;*//*первый вариант*/
+    float: right; /*второй вариант*/
+
+}
+
+.footer1 {
+    background-color: red;
+    height: 100px;
+}
+
+.wrap:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+/*------------------------------------*/

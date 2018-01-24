@@ -1,0 +1,186 @@
+/*todo fonts: font-family: 'Lato', sans-serif;*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.wrap {
+    max-width: 1366px;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+    font: 400 20px 'Lato', sans-serif;
+}
+
+.aside {
+    width: 314px;
+    background-color: #293744;
+}
+
+.title {
+    text-transform: uppercase;
+    color: #bed1e4;
+    line-height: 57px;
+    background-color: #33414e;
+    padding-left: 30px;
+}
+
+.nav,
+.subnav {
+    list-style-type: none;
+}
+
+.nav > li {
+    position: relative;
+}
+
+.nav > li > a {
+    display: block;
+    padding: 21px 0 21px 80px;
+    text-decoration: none;
+    color: #ededec;
+    border-left: 8px solid transparent; /* todo делаем прозрачный чтобы текст не дергался при наведении*/
+    background-color: #33414e;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav > li > a::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    position: absolute; /*todo если здесь absolute тогда для ссылки надо relative - чтобы позиционировать относительно ссылки*/
+    left: 25px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+}
+
+/*todo ниже правильнее задать через классы*/
+/*.nav > li:nth-of-type(1) > a::before {
+    background-image: url("../img/speedometer_24.png");
+}*/
+.nav > li .dash::before {
+    background-image: url("../img/speedometer_24.png");
+}
+
+/*.nav > li:nth-of-type(2) > a::before {
+    background-image: url("../img/desktop-monitor_24.png");
+}*/
+.nav > li .lay::before {
+    background-image: url("../img/desktop-monitor_24.png");
+}
+
+/*.nav > li:nth-of-type(3) > a::before {
+    background-image: url("../img/folder_24.png");
+}*/
+.nav > li .page::before {
+    background-image: url("../img/folder_24.png");
+}
+
+.nav > li > a::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    position: absolute; /*todo если здесь absolute тогда для ссылки надо relative - чтобы позиционировать относительно ссылки*/
+    right: 23px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    background-image: url("../img/right-chevron_16.png");
+}
+
+/*------------------------------------------------------------------*/
+.subnav {
+    position: absolute;
+    top: 0;
+    /*left: 314px;*/
+    left: 100%;
+
+    /*width: 70%; !*todo вариант без анимации*!*/
+    /*display: none;*/
+
+    width: 0%; /*todo вариант с анимацией*/
+    overflow: hidden;
+    transition: width 1s;
+    white-space: nowrap;  /*todo чтобы текст не переносился при открытии*/
+
+}
+
+.subnav li {
+
+}
+
+.subnav a {
+    display: block;
+    padding: 21px 0 21px 80px;
+    text-decoration: none;
+    color: #ededec;
+    background-color: #293744;
+    position: relative;
+    cursor: pointer;
+}
+
+.subnav a::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 23px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    border: 3px solid transparent;
+    border-radius: 50%; /*чтобы получить круг*/
+}
+
+.subnav > li:nth-of-type(1) > a::before {
+    border-color: #85c875;
+}
+
+.subnav > li:nth-of-type(2) > a::before {
+    border-color: #0bc4df;
+}
+
+.subnav > li:nth-of-type(3) > a::before {
+    border-color: #f1a80a;
+}
+
+.nav > li:hover > .subnav { /*todo открытие подменю при наведении*/
+    /*display: block;!*todo вариант без анимации*!*/
+    width: 70%; /*todo вариант с анимацией  */
+}
+
+.nav > li > .active + .subnav {
+}
+
+.nav .active {
+    border-color: #85c875;
+    background-color: #253348;
+}
+
+/* todo ////*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

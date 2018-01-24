@@ -1,0 +1,551 @@
+/*font-family: 'Open Sans', sans-serif;*/
+@font-face {
+    font-family: 'Tahoma';
+    src: local("Tahoma"), local("TahomaRegular"),
+    url('../fonts/Tahoma/Tahoma-Regular.eot'),
+    url('../fonts/Tahoma/Tahoma-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Tahoma/Tahoma-Regular.woff') format('woff'),
+    url('../fonts/Tahoma/Tahoma-Regular.ttf') format('truetype'),
+    url('../fonts/Tahoma/Tahoma-Regular.svg#Tahoma-Regular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arial';
+    src: url('../fonts/ArialRegular/ArialRegular.woff') format('woff'),
+    url('../fonts/ArialRegular/ArialRegular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "My_Name_Lato";
+
+    src: local('My_Name_Lato'),
+    url("../fonts/Lato/Lato-Regular.ttf") format('ttf'),
+    url("../fonts/Lato/Lato-Regular.woff") format('woff'),
+    url('../fonts/ArialRegular/ArialRegular.woff') format('woff'),
+    url("../fonts/Lato/Lato-Regular.woff2") format('woff2'),
+    url("../fonts/Lato/Lato-Regular.eot") format('eot');
+
+    font-style: normal;
+    font-weight: 400;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 936px;
+}
+
+.btn {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 10px 12px;
+    background-color: #ccc;
+    display: inline-block; /*todo т.к. ссылки - Inline элементы*/
+    border: 1px solid #fff;
+}
+
+.header {
+    background: linear-gradient(#161616, #424242);
+}
+
+.header .container {
+    padding: 44px 0 0 30px;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.logo img {
+    display: block;
+}
+
+.nav {
+    text-align: right;
+}
+
+.menu {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0;
+    margin-top: 5px;
+}
+
+.menu > li {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 1px; /*todo отступ между пунктами меню*/
+    position: relative; /*todo для позиционирования subnav*/
+}
+
+.menu > li > a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    width: 132px;
+    display: inline-block; /*todo в уроке block*/
+    text-align: center;
+    line-height: 38px; /*todo высота пункта меню и выравнивание по вертикали по центру*/
+    border-radius: 5px 5px 0 0;
+    background: linear-gradient(#262626, #111111);
+}
+
+.menu > li > a:hover,
+.menu > li > .menu_active {
+    font-size: 13px;
+    text-transform: uppercase;
+    font-style: italic;
+    background: linear-gradient(to top, #e77d00, #f6a60d);
+}
+
+.menu > li:hover .subnav {
+    display: block;
+}
+
+.subnav { /*todo выпадающий элемент - должен быть спозиционирован абсолютно относительно элемента li*/
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 172px;
+    background: linear-gradient(to right, #e87e00, #F6A60C);
+    padding-top: 6px;
+    display: none;
+}
+
+.menu > li:last-of-type .subnav {
+    left: auto;
+    right: 0;
+}
+
+.subnav > li {
+
+}
+
+.subnav > li > a {
+    font: 400 11px/25px 'Arial', sans-serif;
+
+    text-decoration: none;
+    color: #FFFFFF;
+    text-align: left;
+    line-height: 25px; /*todo высота пункта меню и выравнивание по вертикали по центру*/
+    /*height: 25px;*/
+    display: block; /*todo в уроке block*/
+    cursor: pointer;
+    padding: 0 8px;
+    box-sizing: border-box; /*todo потому что задали padding*/
+    /*padding-top: 6px;*/
+}
+
+.subnav > li > a:hover {
+    color: #fff;
+    background: #4e4e4e;
+    font: 400 12px 'Tahoma', sans-serif; /*todo если задать 12px/25px - размерШрифта/высотаСтроки - то не прыгает шрифт*/
+    line-height: 25px;
+
+}
+
+/*----------------SECTION MAIN----------------*/
+
+.main {
+    background-color: #cad2d7;
+    padding: 6px 0 7px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.main .container {
+    /*border: 1px solid #acb3b7; !*todo комментируем для примера градиентного  border-a*!*/
+    border-radius: 7px;
+
+    background: linear-gradient(red, blue);
+
+    /*background-image: url("../img/bg-main.jpg");
+    background-color: #FEFEFE;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;*/
+
+    padding: 105px 38px 88px;
+    text-align: right; /*todo выравниваем кнопку вправо*/
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1; /*todo надо поставить для того чтобы понимать что относительно чего*/
+}
+
+.main .container::before {
+    content: '';
+    position: absolute;
+    top: 1px; /*todo 1px - чтобы картинка растягивалась на 1px меньше*/
+    bottom: 1px;
+    left: 1px;
+    right: 1px;
+
+    /*todo картинку и градиет меняем местами, т.к. элемент before
+    todo находится чуть вышу по слоям чем background*/
+    /*background: linear-gradient(red, blue);*/
+
+    background-image: url("../img/bg-main.jpg");
+    background-color: #FEFEFE;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    border-radius: 6px;
+
+    z-index: -1;
+}
+
+.head {
+    font-size: 28px;
+    font-weight: 400;
+    color: #353535;
+    line-height: 31px;
+    /*text-align: right; !*todo т.к. это свойство наследуется - то можно задать его общим для нескольких элементов*!*/
+    margin-bottom: 12px;
+}
+
+.head span {
+    font-style: italic;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #ec8c04;
+}
+
+.main .btn {
+    background: linear-gradient(to top, #e77d00, #f6a60d);
+    text-shadow: 1px 1px 0 #a55d08;
+}
+
+/*----------------SECTION ABOUT----------------*/
+
+.about {
+    background: linear-gradient(#e6eaec, #fefefe);
+    padding: 12px 0 20px;
+}
+
+.about > .container {
+    font-size: 0;
+}
+
+.about_item {
+    width: 308px;
+    display: inline-block;
+    vertical-align: top;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+    border-radius: 7px;
+    padding: 0 25px 29px;
+    box-sizing: border-box;
+    background: linear-gradient(#fff, #f3f3f3);
+    margin-right: 6px; /*3-й должен блок соскочить*/
+}
+
+.about_item:nth-of-type(3) {
+    margin-right: 0;
+}
+
+.about_title {
+    font: 400 24px "Open Sans", SansSerif;
+    color: #353535;
+    padding: 28px 0 7px 63px; /*отступ для картинки*/
+    border-bottom: 1px dotted #9b9a99;
+    letter-spacing: -1px; /*ужимает текст*/
+    position: relative;
+
+}
+
+.about_title::before {
+    content: '';
+    position: absolute;
+    width: 49px;
+    height: 103px;
+    top: 3px;
+    left: 0;
+    background-repeat: no-repeat;
+}
+
+.about_item:nth-of-type(1) .about_title::before {
+    background-image: url("../img/icon_about_1.png");
+}
+
+.about_item:nth-of-type(2) .about_title::before {
+    background-image: url("../img/icon_about_2.png");
+}
+
+.about_item:nth-of-type(3) .about_title::before {
+    background-image: url("../img/icon_about_3.png");
+}
+
+.about_img {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+    margin: 17px 0 19px;
+}
+
+.about_text {
+    font: 400 12px/17px Arial, sans-serif;
+    color: #808080;
+    padding-left: 7px;
+
+}
+
+.about_item > .btn {
+    background: linear-gradient(#494949, #121212);
+    margin-top: 15px;
+    text-shadow: 1px 1px 0 #000;
+}
+
+.about_list {
+
+}
+
+.about_list > li {
+    list-style-type: none;
+}
+
+.about_list > li > a {
+    font: 400 10px/17px Arial, sans-serif;
+    color: #ec8c04;
+    margin-left: 19px; /*делаем margin чтобы подчёркивание не заходило под стрелку*/
+    position: relative;
+    text-transform: uppercase;
+    display: block;
+}
+
+.about_list > li > a:before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-image: url("../img/arrow.png ");
+    top: 0;
+    bottom: 0;
+    margin: auto; /*выравнивание по вертикали*/
+    left: -13px;
+}
+
+/*----------------SECTION SERVICES----------------*/
+
+.services {
+    background: linear-gradient(#262626, #3e3e3e);
+    padding-bottom: 52px;
+}
+
+.services .container {
+    box-sizing: border-box;
+    font-size: 0px;
+}
+
+.services_left {
+    display: inline-block;
+    vertical-align: top;
+    width: 622px;
+    margin-right: 6px;
+    padding-top: 30px;
+    padding-right: 25px;
+    box-sizing: border-box;
+
+}
+
+.services_right {
+    display: inline-block;
+    vertical-align: top;
+    width: 308px;
+    padding-top: 37px;
+    padding-left: 34px;
+    box-sizing: border-box;
+}
+
+.services_title {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 18px;
+
+}
+
+.services_text {
+    font: 400 12px/17px Arial, sans-serif;
+    color: #d1d1d1;
+    margin-bottom: 18px;
+}
+
+.services_text_gray {
+    color: #989999;
+}
+
+.services_left .services_text:nth-of-type(1) {
+    font: italic 400 16px/20px Arial, sans-serif;
+    color: #c17821;
+
+}
+
+.services_img {
+    width: 216px;
+    height: 140px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    float: left; /*для обтекания текста*/
+    box-sizing: border-box;
+    margin-right: 20px;
+    margin-bottom: 22px;
+    box-shadow: 0 0 0 1px #000;
+}
+
+.services .btn {
+    background: linear-gradient(to top, #f6a60d, #e77d00);
+    display: inline-block;
+    margin-top: 8px;
+    border: 1px solid #333333;
+    text-shadow: 1px 1px 0 #a55d08;
+}
+
+.services_list {
+    list-style-type: none;
+    margin-top: 26px;
+    margin-bottom: 17px;
+    margin-right: 14px;
+}
+
+.services_list > li {
+    font: 400 12px/15px Arial, sans-serif;
+    color: #989999;
+    border-bottom: 1px solid #636b6d;
+    padding: 8px 0;
+}
+
+/*----------------SECTION FOOTER----------------*/
+
+.footer {
+    background-color: #212121;
+    padding: 17px 0 18px;
+    border-top: 1px solid #080808;
+}
+
+.footer > .container {
+    /*box-sizing: border-box;*/
+}
+
+.footer_icon {
+    font-size: 0;
+    float: left;
+}
+
+.footer_icon > a {
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    width: 44px; /*46px;*/
+    height: 44px; /*44px;*/
+    background: url("../img/icons.png");
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
+
+.footer_icon > .fb {
+    /*background-position: -2px, 2;*/
+    background-position-x: -2px;
+
+}
+
+.footer_icon .tw {
+    /*background-position: -52px, 0px;*/
+    background-position-x: -52px;
+    background-position-y: 0px;
+}
+
+.footer_icon .other {
+    background-position: -102px, -12px;
+    background-position-x: -102px;
+    background-position-y: 0px;
+}
+
+.footer_icon .tube {
+    /*background-position: -152px, 0;*/
+    background-position-x: -152px;
+    background-position-y: 0px;
+}
+
+.footer_icon > .rss {
+    /*background-position: -202px, -5px;*/
+    background-position-x: -202px;
+    background-position-y: 0px;
+}
+
+.footer_nav {
+    list-style-type: none;
+    float: right;
+    font-size: 0;
+    margin-bottom: 10px;
+    padding-top: 5px;
+}
+
+.footer_nav > li {
+    display: inline-block;
+    vertical-align: top;
+    border-right: 1px solid #313131;
+}
+
+.footer_nav > li:last-of-type a {
+    border-right: none;
+    margin-right: 0;
+}
+
+.footer_nav > li:first-of-type a {
+    margin-left: 0;
+}
+
+.footer_nav > li > a {
+    display: block;
+    color: #8b8b8b;
+    /*text-decoration: none;*/
+    text-transform: uppercase;
+    font: 400 10px Arial, sans-serif;
+    margin: 0 20px;
+}
+
+.footer_nav .footer_nav_active {
+    color: #fff;
+    text-decoration: none;
+}
+
+.copy {
+    clear: right;
+    text-align: right;
+    color: #8b8b8b;
+    font: 400 12px Arial, sans-serif;
+}
+
+.copy > a {
+    color: #8b8b8b;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.clear_fix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+

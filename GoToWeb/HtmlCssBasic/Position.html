@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+    <link rel="stylesheet" href="css/Position.css">
+</head>
+<body>
+
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+<div class="wrap">Position=relative
+
+    <div class="div1">Первый блок</div>
+
+    <div class="div2">Второй блок(relative)</div>
+
+    <div class="div3">Третий блок</div>
+
+</div>
+
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+<div class="wrap">Position=absolute
+
+    <div class="div11">Первый блок</div>
+
+    <div class="div22">Второй блок(absolute)</div>
+
+    <div class="div33">Третий блок</div>
+
+</div>
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+<div class="wrap">Position=fixed
+
+    <div class="div111">Первый блок</div>
+
+    <div class="div222">Второй блок(fixed)</div>
+
+    <div class="div333">Третий блок</div>
+
+</div>
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+<div class="wrapz">Z-index
+
+    <div class="div1z">Первый блок(Z-index)</div>
+
+    <div class="div2z">Второй блок(Z-index)</div>
+
+    <div class="div3z">Третий блок(Z-index)</div>
+
+</div>
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+<div class="wrape">Elastic - Растяжка
+
+    <div class="div1e">Первый блок(Растяжка)</div>
+
+    <div class="div2e">Второй блок(Растяжка)</div>
+
+    <div class="div3e">Третий блок(Растяжка)</div>
+
+</div>
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+<div class="wrapp">Paranja
+    <div class="div1p">Первый блок(Растяжка)</div>
+    <div class="div2p">Второй блок(Растяжка)</div>
+    <div class="div3p">Третий блок(Растяжка)</div>
+</div>
+<div class="paranja">
+    <div class="popup">
+        <h1>Заголовок попапа</h1>
+        <form action="">
+            <input type="text"><br>
+            <input type="text"><br>
+            <input type="submit">
+        </form>
+        <span class="close">X</span>
+    </div>
+</div>
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+</body>
+</html>
+
+
+Позиционирование:
+- для наложение одного обьекта на другой
+
+- static - по умолчанию
+
+-при любом позиционировании, кроме static доступны дополнительные css свойства: top, bottom, left, right, z-index
+а также элементы выпадают из потока, но при каждом типе поз-ия это выпадение своё
+
+- когда заданы два противоположных свойства приоритет у top, left
+
+- relative - относительное позиционирование
+элемент выпадает из потока, но место элемента бронируется, и при этом элем. можно перемещать при помощи top, bottom, left, right
+например top: 20px - смещение на 20px сверху
+
+- absolute - абсолютное позиционирование, место за элементом не бронируется,
+1)элементы ведут себя как inline-block (т.е. для блочныхэлементов - исчезает растягивание на всю ширину,
+для строчных элементов - появляется возможность задавать высоту и ширину)
+2) при применении t,b,l,r - влияет как задано позиционирование родителя
+если у всех static - значит элемент позиционируется относительно body
+если у родителя(одного из) позиционирование например relative (отличное от static) - элемент позиционируется относ. родительского элемента
+3)при прокрутке элемент смещается
+
+- fixed - фиксированное позиционирование
+похоже на absolute, с той разницей что позиционирование всегда отсчитуется от окна браузера(от viewbord)
+при прокрутке элемент не смещается
+
+- z-index - индекс расположение элемента по оси Z (когда произходите наложение элементов)
+чем больше индекс - тем ближе к поверхности
+1) 0 - значение по умолчанию
+2) -1 - прячет за родительский элемент
+
+
+- Растяжка: если у элемента не задана ширина, или высота - то задание left-right top-bottom растягивает
+элемент до соответствующих отступов
+
+- Центровка по горизонтали: postion:absolute & если задана ширина элемента, left:0, right:0, margin: 0 auto
+- Центровка по вертикали относ род. элемента: postion:absolute & если задана высота элемента, top:0, bottom:0, margin: auto 0
+- если совместить : postion:absolute, width, height, left:0, right:0, top:0, bottom:0, margin: auto
+
+- overlay или paranja - блок перекрывающий всё изображение(что-то вроде popup)
+
+
+
+
+
+
+
+
+
+
+
+
+

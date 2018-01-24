@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Float</title>
+    <link rel="stylesheet" href="css/Float.css"/>
+</head>
+<body>
+<hr style="border-top: dashed 5px; margin: 40px 0px;/*background-color: red; height: 2px;*/"/>
+
+<img class="zakat" src="img/zakat.png" alt="">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci at cumque doloremque doloribus eaque earum eos
+    inventore minima, molestiae, natus, neque nesciunt non nostrum quasi quia sed temporibus tenetur. Aliquam amet at
+    corporis, dolores dolorum eligendi, esse exercitationem explicabo facere harum id in laboriosam minima
+    necessitatibus non obcaecati sequi similique ut. Consequuntur ducimus eos fuga ipsum minus optio quis! Ab aperiam
+    assumenda at aut corporis dolorum ducimus error et expedita fugiat in ipsam, laboriosam magnam minima molestias nemo
+    non odio porro possimus quaerat saepe sint ut veniam, veritatis vitae. Alias architecto excepturi ipsam non.
+    Excepturi libero nesciunt odit vel? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque
+    blanditiis consequuntur culpa cum doloremque enim, exercitationem fuga hic iusto maxime molestiae molestias natus
+    neque non odio perferendis praesentium quae quam quas quo quos ratione recusandae reiciendis, repudiandae ut vel
+    voluptatum. </p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Sint, ut.</p>
+<p class="footer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci at cumque doloremque doloribus
+    eaque earum eos
+    inventore minima, molestiae, natus, neque nesciunt non nostrum quasi quia sed temporibus tenetur. Aliquam amet at
+    corporis, dolores dolorum eligendi, esse exercitationem explicabo facere harum id in laboriosam minima
+    necessitatibus non obcaecati sequi similique ut. Consequuntur ducimus eos fuga ipsum minus optio quis! Ab aperiam
+    assumenda at aut corporis dolorum ducimus error et expedita fugiat in ipsam, laboriosam magnam minima molestias nemo
+    non odio porro possimus quaerat saepe sint ut veniam, veritatis vitae. Alias architecto excepturi ipsam non.
+    Excepturi libero nesciunt odit vel? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque
+    blanditiis consequuntur culpa cum doloremque enim, exercitationem fuga hic iusto maxime molestiae molestias natus
+    neque non odio perferendis praesentium quae quam quas quo quos ratione recusandae reiciendis, repudiandae ut vel
+    voluptatum. </p>
+
+<hr style="border-top: dashed 5px; margin: 40px 0px;/*background-color: red; height: 2px;*/"/>
+
+<div class="block1">АБ</div>
+<div class="block2"></div>
+<br>
+<span class="block3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, ipsa, nulla.</span>
+<div class="block4"></div>
+
+<hr style="border-top: dashed 5px; margin: 40px 0px;/*background-color: red; height: 2px;*/"/>
+
+<div class="variant1">
+
+    <div class="header">
+        <img class="water" src="img/water.png" alt="">
+        <p>Контактные данные магазина</p>
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid aperiam at atque deserunt dolore
+        dolores,
+        dolorum excepturi facere fuga harum illum, laboriosam neque nesciunt nihil omnis perspiciatis placeat quam quasi
+        repellendus reprehenderit sed similique temporibus totam ullam vel vero, vitae. Dicta dolores eum repellat vel!
+        Accusamus, adipisci delectus exercitationem explicabo facere facilis fuga labore numquam officiis optio
+        provident
+        quaerat!</p>
+</div>
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+<div class="variant2">
+    <div class="header">
+        <img class="water" src="img/water.png" alt="">
+        <p>Контактные данные магазина</p>
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid aperiam at atque deserunt dolore
+        dolores,
+        dolorum excepturi facere fuga harum illum, laboriosam neque nesciunt nihil omnis perspiciatis placeat quam quasi
+        repellendus reprehenderit sed similique temporibus totam ullam vel vero, vitae. Dicta dolores eum repellat vel!
+        Accusamus, adipisci delectus exercitationem explicabo facere facilis fuga labore numquam officiis optio
+        provident
+        quaerat!</p>
+</div>
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+<div class="header1">header1</div>
+<div class="wrap">
+    <div class="left1">left1</div>
+    <div class="center1">center1</div>
+    <div class="right1">right1</div>
+</div>
+<div class="footer1">footer1</div>
+
+<hr style="border-top: dashed 5px; margin: 40px 0px;clear: both;"/>
+
+</body>
+</html>
+
+Поток документа - очерёдность всех элементов документа, которые создаются сверху вниз
+каждый элемент стремится встать как можно выше, как можно левее.
+
+float: left - говорит элементу прижаться как можно левее, а все что идет после тебя будет обтекать тебя справа
+:right
+:none
+
+есть поток документа картирка->параграф
+когда картинке присваивается float - картинка как бы выпадает из потока (выдвигается на верхний слой), но текст параграфа сдвигается
+до размеров картинки
+парграф как-бы находится за картинкой
+
+- обтекаемость распространяется на все элементы, которые следуют за элементом с float
+- чтобы убрать обтекаемость для следующего элемента - clear: left, right, both;
+
+- когда блочным элемента присваивается float - то свойство растягвания на всю ширину родителя не работает, и фактически они становятся
+inline-block элементами т.е. ширина по контенту
+
+- если к строчному элементу применить float - то он становиться inline-block, т.е. к ниму применимы задание высоты и ширины
+
+- можжно провести аналигию свойств float == display: inline-block, но это не одно и тоже
+
+
+- для элементов с float - проблема выпадения из потока
+решается :
+- создание еще одного элемента со свойством clear:both; (class=clearfix)
+- с помощью псевдоэлемента :after
+
+- т.к. картинка является inline-block элементом - справа от неё может находиться другие элементы
+
+- с помощью float - можно делать сетки
